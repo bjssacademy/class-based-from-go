@@ -286,3 +286,7 @@ Console.WriteLine("Hello " + p.Name)
 ```
 
 The only real different here is the use of the `new` keyword and parenthesis `()` rather than curly braces `{}`. Oh, and the semi-colon at the end of each line!
+
+***
+
+[Chapter 2 >>](part2/chapter02.md)

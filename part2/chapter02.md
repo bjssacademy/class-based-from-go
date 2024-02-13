@@ -124,3 +124,7 @@ public void updateNameAndAge(string name, int Age){
 ```
 
 > Remember, in C# it's type first, then the parameter name!
+
+***
+
+[Chapter 3 >>](/part3/chapter03.md)
