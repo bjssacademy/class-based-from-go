@@ -109,7 +109,7 @@ A class is a blueprint for creating objects. It can have properties (fields in G
 
 ## Adding some properties
 
-Let's add a property - or field - to our class:
+Let's add a property (a field in Go) to our class:
 
 ```c#
 internal class Person
@@ -121,7 +121,7 @@ internal class Person
 
 Much like we would do on a struct in Go when adding a field with a few subtle differences:
 
-- `private` keyword: this - not the capitalisation of the first letter - determines whether the property is private and not accessible outside of its own namespace. Alternative is `public`.
+- `private` keyword: this, ***not*** the capitalisation of the first letter, determines whether the property is private and not accessible outside of its own namespace. Alternative is `public`.
 - `string`: the data type - in C# it goes *before* the property/variable name
 -  `Name`: the property/variable name
 - `{ get; set; }`: shorthand for defining a property with both a getter and setter
