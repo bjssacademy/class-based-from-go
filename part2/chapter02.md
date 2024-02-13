@@ -83,7 +83,7 @@ func updatename(newname string) {
 
 But C# requires us to *explicitly* state the method will return nothing.
 
-> Also not how the data type and the parameter name are the other way round in C# and Go!
+> Also note how the data type and the parameter name are the other way round in C# and Go!
 
 Okay, let's add some code into that method to make it useful:
 
