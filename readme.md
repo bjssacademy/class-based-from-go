@@ -13,8 +13,11 @@ We, however, are going to be focusing on its OOP abilities.
 
 ## Setup
 
-[Install Visual Studio Community](https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022)
+[Install Visual Studio Community](https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022) and follow the steps with the additions below:
 
+> You will need to choose ASP.Net Web Development and the defaults in Step 4
+>
+> In Step 5 ensure you have selected .NET 8 Runtime (Long Term Support)
 
 Once installed open up Visual Studio, and click on `Create a new project`:
 

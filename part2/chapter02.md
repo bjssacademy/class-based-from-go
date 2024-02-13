@@ -96,7 +96,7 @@ public void updateName(string newname)
 
 `Name` here is our property in the class we are updating, and `newname` is the string parameter we passed in. Note again it's a statement, so we *MUST* finish the line with the semi-colon.
 
-Let's try using it! Go back to your Program.cs and add the following line of code just above your first `Console.WriteLine`:
+Let's try using it! Go back to your `Program.cs` and add the following line of code just above your first `Console.WriteLine`:
 
 ```c#
 p.updateName("Oswald");
