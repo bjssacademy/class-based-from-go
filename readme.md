@@ -19,7 +19,9 @@ We, however, are going to be focusing on its OOP abilities.
 >
 > In Step 5 ensure you have selected .NET 8 Runtime (Long Term Support)
 
-Once installed open up Visual Studio, and click on `Create a new project`:
+Once installed open up Visual Studio. If you are asked for your preferred development environment, pick "Visual C#".
+
+Hopefully you should now be presented with and option to click on `Create a new project`:
 
 ![Alt text](images/newproject.PNG)
 
