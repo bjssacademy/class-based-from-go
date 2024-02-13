@@ -7,7 +7,7 @@ In Go, when we define methods, we defined them outside the struct with a receive
 
 In C#, it's very different - methods belong to classes and are defined inside them.
 
-Let's go back to Person.cs and create a method to see what we are talking about.
+Let's go back to our Person class and create a method to see what we are talking about.
 
 ## My First Method
 
@@ -23,7 +23,7 @@ public string introduce() {
 
 First off we declare this method to be `public`, accessible from outside our namespace (or package in Go).
 
-Next we declare `string` which is actually the return type. I know, I know. We're used to it being after the parameters. It isn't this is just the way it is!
+Next we declare `string` which is actually the *return* type. I know, I know. We're used to it being after the parameters. It isn't - this is just the way it is!
 
 Finally we have the name of our method `introduce()`. Well, at least this bit is the same, as are the curly braces enclosing the code!
 
@@ -33,9 +33,9 @@ Let's go ahead and update our class:
 
 ![Alt text](images/firstmethod.PNG)
 
-Okay, so now we are returning a string from the method, and that string will be "Hello, my name is " plus whatever is stored in the Name property.
+Okay, so now we are returning a string from the method, and that string will be "Hello, my name is " plus whatever is stored in the `Name` property.
 
-> You may notice here that we don't have that pointer receiver in C#, sho how does it know what properties it has access to? Well, that's because of the scope. With methods defined inside the class, the code has access to its own properties. In Go, we have to do some magic to say "this belongs to this" to get this sort of functionality. 
+> You may notice here that we don't have that pointer receiver in C#, so how does it know what properties it has access to? Well, that's because of the scope. With methods defined inside the class, the code has access to its own properties. In Go, we have to do some magic to say "this belongs to this" to get this sort of functionality. 
 
 ## Utilise our method!
 
