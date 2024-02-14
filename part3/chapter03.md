@@ -204,5 +204,8 @@ internal class Problem
 2. Update the constructor code to set the `Age` property
 3. Make sure your code works!
 
+***
+
+[Chapter 4 >>](/part4/chapter04.md)
 
 [^1]: ok, this isn't completely true, but it's true enough for now.
