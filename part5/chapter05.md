@@ -119,3 +119,6 @@ In C#, we use a method on the List object itself:
 
     numbers.Add(6);
 ```
+***
+
+[Chapter 6 >>](/part6/chapter06.md)

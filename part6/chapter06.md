@@ -192,3 +192,7 @@ foreach  (IMedia media in playList)
 1. When you run the code, it will throw an exception in the IDE. Update the code **only** in this file to handle the exception and print out to the console *"There was an error stopping the media from playing."*
 
 2. Implement the code in *all* your concrete classes (classes that implement the interface) so that the Stop() method no longer throws an exception.
+
+***
+
+[Chapter 7 >>](/part7/chapter07.md)
