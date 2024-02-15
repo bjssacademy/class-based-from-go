@@ -131,3 +131,202 @@ The Academy500Roadster has two engine options, with an engine size of 1600 or 20
 
 Create a new concrete class for the new engine size, and create two Academy500Roadsters - one with a 1600 engine and one with a 2000 engine.
 
+***
+
+## Let's make it a bit more real
+
+Okay, so having different engine size is fine, but it's not actually giving us much. Let's create a maximum speed for the engine:
+
+```c#
+public interface IEngine
+{
+    public Double EngineSize { get; }
+    public int MaxSpeed { get; }
+
+}
+```
+Now we will need to implement this in our concrete Engine classes.
+
+Engine1600:
+```c#
+public int MaxSpeed
+{
+    get { return 92; }
+}
+```
+Engine2000:
+```c#
+public int MaxSpeed
+{
+    get { return 112; }
+}
+```
+
+Of course, we had our Accelerate method that we have not implemented yet. Let's go ahead and update that method in the `Academy500Roadster` class:
+
+```c#
+public void Accelerate()
+{
+    for (int speed = 0; speed <= Engine.MaxSpeed; speed++)
+    {
+        Console.WriteLine(speed.ToString() + "MPH");
+    }
+}
+```
+
+Great! Now when we call the Accelerate() function, the car will accelerate to it's top speed depending on the Engine we give the car when we build it, and the one with the 1600 engine should get to 92MPH and the one with the 2000 engine should get to 112MPH. Let's see if we are right.
+
+In Program.cs, update your code:
+
+```c#
+IEngine engine1600 = new Engine1600();
+IEngine engine2000 = new Engine2000();
+
+Academy500Roadster roadster1600 = new Academy500Roadster(engine1600);
+Academy500Roadster roadster2000 = new Academy500Roadster(engine2000);
+
+roadster1600.Accelerate();
+roadster2000.Accelerate();
+```
+Run your program (F5) and check the output!
+
+### Don't print from your object
+
+We've been a bit naughty here to show you that updating the Accelerate() method allows us to see the difference in maximum speeds a car can achieve. Generally we wouldn't want to do that. We want the object to update its own state, but leave the output to the calling code.
+
+This is because we don't know how the calling code wants to consume our state, so we leave it up to them to implement, we just provide the ability to see the state.
+
+## Let's add a *field*
+
+Okay, so we've looked at properties in our class (which have getters and setters) - they look pretty much just like variables with some magic words after them. Those magic words are known as the *accessors*.
+
+You can also have *fields* in a class, which is a variable directly declared inside a class without getters or setters.
+
+The difference is that properties allow us more control over what is returned or stored; they can perform computation on the data before it is stored or when it is returned. We haven't done that yet, so let's have a look at some code to show you how different properties are versus fields.
+
+One of the magic things C# does is to create *backing fields* when you use `{ get; set; }`. What this means is it creates a field you can't see, but the property uses. This is because you used to have to write properties longhand and the actual code it is hiding from you is this:
+
+```c#
+private string _name; //this is the backing field
+
+public string Name { //this is our property
+    
+    get { 
+        return _name; //we return the _name backing field
+    }
+
+    set { 
+        _name = value; //we set the value of _name backing field to whatever we have been assigned
+    }
+
+}
+```
+
+Fortunately you don't have to write any of this at all now - unless you want to perform some sort of computation on the value when it is set or returned. For example, let's say we always want to store names as lower case:
+
+```c#
+private string _name; 
+
+public string Name { 
+    
+    get { return _name; }
+    set { 
+        _name = value.ToLower(); //whenever we are given a value, we will always store it as lowercase. 
+    }
+
+}
+```
+
+### So what's all this about fields?
+
+We normally use fields to represent **state** by holding data. In our car for instance, one state we may want to know is the current speed we are traveling. We don't want this to be a property which can bet set.
+
+Fields are often `private` to ensure controlled access via methods only. As a general rule to follow for now, ensure your fields are always private.
+
+Let's add a field to our `Academy500Roadster` class:
+
+```c#
+public class Academy500Roadster : ICar
+{
+    public IEngine Engine { get; private set; }
+
+    private int _speed = 0;
+
+    //...rest of code 
+
+}
+```
+
+> We can set default values of fields for when the class is instantiated. Here we have set the `_speed` field to 0.
+
+Now let's update our Accelerate method to increment the speed by 1 every time it is called:
+
+```c#
+public void Accelerate()
+{
+    if (_speed < Engine.MaxSpeed) {
+        _speed++;
+    }
+}
+```
+> As you can see in the code, we won't accelerate past the maximum speed of the engine.
+
+Now we want to be able to assess what the speed of the car is from outside the class itself. At the moment, everything is internal, we have no way to access the current speed the car is traveling at.
+
+There are 2 ways to do this - with a method or with a read-only property.
+
+> I might use a method if I wanted the speed back in a particular unit, MPH or KPH for instance; I'd provide the required unit as a parameter and the method would perform any necessary calculations.
+
+Via a method:
+
+```c#
+public int Speed()
+{
+    return _speed;
+}
+```
+
+Or via a readonly property:
+
+```c#
+public int Speed => _speed;
+```
+
+The only difference here is how they are called:
+- `Car.Speed()` for the method
+- `Car.Speed` for the readonly property
+
+> Now, realistically here, thinking of the car as an object, what do we actually have in a car that tells us the speed? The Speedometer. So would that be what I want to call the property? Maybe. I'll learn more about the domain as I go on, but for now I'll stick with Speed.
+
+## Let's accelerate the car and check its speed!
+
+Okay, back into Program.cs and let's speed our car up! I have implemented the readonly property `Speed` in my `Academy500Roadster` class.
+
+```c#
+IEngine engine = new Engine1600();
+
+Academy500Roadster roadster = new Academy500Roadster(engine);
+
+roadster.Accelerate();
+roadster.Accelerate();
+roadster.Accelerate();
+
+Console.WriteLine(roadster.Speed);
+```
+
+***
+
+## Lab
+
+1. Okay, so the car goes now, but it doesn't stop! Update the `Brake()` method to slow the car down.
+
+2. It's hard to see at night without headlights! 
+
+- Headlights are available in Normal or Neon.
+- The choice of headlights is not dependent on the Engine
+- Headlights can be Off (default), Dipped, or Full Beam.
+
+Implement the code to provide composition of the car via the constructor requiring both an Engine and Headlights.
+
+
+> Remember, the *state* of the headlights can be one of three things - Off, Dipped, Full Beam. You will need to provide a way to change the state via methods, and a way to report the state of the headlights at any time.
