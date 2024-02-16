@@ -337,4 +337,8 @@ Even worse, imagine some other developer adds something to the base class becaus
 So, if you *have* to use a base class, be very, very careful. You will need to consider the trade-offs, potential problems and the specific requirements of your solution.
 
 ***
+
+[Chapter 9 >>](/part9/chapter09.md)
+
+***
 [Microsoft's documentation on virtual](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual)
