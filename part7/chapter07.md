@@ -330,3 +330,7 @@ Implement the code to provide composition of the car via the constructor requiri
 
 
 > Remember, the *state* of the headlights can be one of three things - Off, Dipped, Full Beam. You will need to provide a way to change the state via methods, and a way to report the state of the headlights at any time.
+
+***
+
+[Chapter 8 >>](/part8/chapter08.md)
