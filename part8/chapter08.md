@@ -230,7 +230,7 @@ Our class `NormalHeadlights` contains no code at all. Head over to your Program.
 
 You'll notice that when we use the dot notation, all the methods of the base class are shown in the drop down. But NormalHeadlights doesn't contain any code! How is this possible.
 
-Again, inheritance.* All the code* - properties, fields, methods - are available to our *child* or *derived* class (`NormalHeadlights`). This is also known as `subclassing`.
+Again, inheritance. *All the code* - properties, fields, methods - are available to our *child* or *derived* class (`NormalHeadlights`). This is also known as `subclassing`.
 
 Our base class is known as the `parent class`, or the `super class` in other languages.
 
