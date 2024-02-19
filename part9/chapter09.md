@@ -101,3 +101,7 @@ Public class Person
 ```
 
 > That's not a great example, but hopefully you get the idea!
+
+***
+
+[Chapter 10 >>](/part10/chapter10.md)
