@@ -25,7 +25,7 @@ And then we could construct a car without having to provide it any constructor p
 Academy500Roadster roadster = new Academy500Roadster();
 ```
 
-Now it might seem like the latter is far easier to do and it's a trap people fall into all the time when learning programming.
+Now it might seem like the latter is far easier to do - and it's a trap people fall into all the time when learning programming.
 
 The problem this creates is of *tight coupling* - your instance of `Academy500Roadster` can **only ever have** a 1600CC engine and normal headlights. You cannot change the engine or the headlights.
 
@@ -49,7 +49,7 @@ What we've actually been doing up until now, is known as the Dependency Inversio
 
 >  DIP says: high-level modules should not depend on low-level modules but both should depend on abstractions.
 
-We have been *injecting* instances into our class, that it *depends* on to be able to function, rather than letting the class decide what it needs to function. So we have achieved DIP by using the practice known as Dependency Injection, or DI.
+We have been *injecting* instances into our class, that it *depends* on to be able to function, rather than letting the class decide what it needs to function. So we have achieved DIP by using the pattern known as **Dependency Injection**, or DI.
 
 ### What does DIP mean about depending on abstractions?
 
@@ -61,13 +61,13 @@ We don't care if headlights are neon, halogen, candles, or a small mob with burn
 
 It allows us *not to care about the actual implementation*, only about the interface - what we can call on **any** headlight or engine object.
 
-Trust is, this is going to be very, very important.
+Trust us, this is going to be very, very important.
 
 ### So what's the difference between DIP and DI?
 
-DIP is what we want to achieve, and is a **Design Principle**. It doesn't say *how* you should achieve it technically. To solve the problem we have used constructor injection of our dependencies - Dependency Injection, which is a **Design Pattern**.
+DIP is what we want to achieve, and is a **Design Principle**. It doesn't say *how* you should achieve it technically. To solve the problem we have used constructor injection on our dependencies - Dependency Injection, which is a **Design Pattern**.
 
-So DIP is the theory, DI is the practice.
+So DIP is the *theory*, DI is the *practice*.
 
 ## My Head Hurts
 
