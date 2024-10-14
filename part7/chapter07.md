@@ -103,7 +103,9 @@ public class Engine1600 : IEngine
 
 > **Wait! What are you doing here?** Okay, I've cheated a bit, I know more C# than you, and I haven't fully explained getters and setters other than they are "magic".
 >
-> LINK TO GETTERS AND SETTERS
+> [Here's a link covering them](https://www.w3schools.com/cs/cs_properties.php)
+>
+> Also the "D" following the "1600" is the C# way of marking out a Double, as supposed to a Float or a Long. They are demarkated with a F and a L respectively.  
 
 Right, so now we have our getter that provides a "canned" response every time it is called of 1600 as a double. There's no setter specified, so the Engine1600 class is ready to be used when it is instantiated. Good object, like it.
 
@@ -239,7 +241,7 @@ public string Name {
 
 ### So what's all this about fields?
 
-We normally use fields to represent **state** by holding data. In our car for instance, one state we may want to know is the current speed we are traveling. We don't want this to be a property which can bet set.
+We normally use fields to represent **state** by holding data. In our car for instance, one state we may want to know is the current speed we are traveling. We don't want this to be a property which can be set.
 
 Fields are often `private` to ensure controlled access via methods only. As a general rule to follow for now, ensure your fields are always private.
 
