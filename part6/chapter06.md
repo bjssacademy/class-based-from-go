@@ -193,6 +193,8 @@ foreach  (IMedia media in playList)
 
 2. Implement the code in *all* your concrete classes (classes that implement the interface) so that the Stop() method no longer throws an exception.
 
+> NOTE: If you have already removed the ```throw new NotImplementedException(); ``` from the codebase and implemented the features, well done! You should still add a exception handling into your loop but you can skip Step 2
+
 ***
 
 [Chapter 7 >>](/part7/chapter07.md)
