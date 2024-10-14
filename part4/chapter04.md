@@ -6,7 +6,7 @@ Trying to describe interfaces generally ends up being a talk about *abstraction*
 
 We shall now attempt the impossible and try to give examples without using any of those words.
 
-> NOTE: We use C# conditional logic, lists, and loops in this chapter that are explained in [the next chapter](/part5/chapter05.md). You can either look at it now, or whever you want.
+> NOTE: We use C# conditional logic, lists, and loops in this chapter that are explained in [the next chapter](/part5/chapter05.md). For a walked through example of all these concepts, feel free to look at Chapter 5 before continuing here.
 
 ## What's the problem?
 
@@ -195,7 +195,7 @@ At this point, we'll see our friend the squiggly red line:
 
 ![Alt text](images/interfacenotimplemented.PNG)
 
-`MP3Media does not implement interface member 'IMediaPlay()'`? What's that about?
+`MP3Media does not implement interface member 'IMedia.Play()'`? What's that about?
 
 This is that interface contract we talked about. When you implement an interface, you MUST implement all its methods.
 

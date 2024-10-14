@@ -159,7 +159,7 @@ Now there are no more squiggly lines, we can run our code again and see that it 
 
 Unlike in Go, C#'s primitive types don't have default values in quite the same way, so you can end up with null reference errors. We don't have quite the same problem in a class with properties, but let's take some more code to show you the problem.
 
-Let's assume I have a field (not a property) in a class called MyState that is of type string, and I have never set a value for it.
+Let's assume I have a field (not a property), in a class called Problem,  that is of type string, and I have never set a value for it. We can call that field, myState.
 
 ```c#
 Problem problem = new Problem();
