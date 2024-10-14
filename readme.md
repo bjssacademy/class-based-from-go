@@ -209,7 +209,7 @@ public Person() {}
 
 > NOTE constructors need to be `public`, for now. Later maybe we can have private ones...
 
-This is what C# is actually doing for via magic. We'll come back con constructors a bit later, but for the moment you can think of them like function parameters we have used in Go.
+This is what C# is actually doing for via magic. We'll come back on to constructors a bit later, but for the moment you can think of them like function parameters we have used in Go.
 
 ### The semi-colon
 
